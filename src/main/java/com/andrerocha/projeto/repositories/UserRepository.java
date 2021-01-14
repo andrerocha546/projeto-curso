@@ -1,4 +1,4 @@
-package com.andrerocha.projeto.entities.repositories;
+package com.andrerocha.projeto.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
