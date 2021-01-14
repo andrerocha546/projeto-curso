@@ -1,12 +1,23 @@
-package com.andrerocha.clinic.domain;
+package com.andrerocha.projeto.entities;
 
-public abstract class Person {
-	
+import java.io.Serializable;
+
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public abstract class Person implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
+	
 	private String name;
 	private String email;
 	private String password;
-	private Boolean admin;
 	
 	public Person() {
 	}
@@ -16,7 +27,6 @@ public abstract class Person {
 		this.name = name;
 		this.email = email;
 		this.password = password;
-		admin = null;
 	}
 
 	public String getName() {
@@ -43,13 +53,13 @@ public abstract class Person {
 		this.password = password;
 	}
 
-	public Boolean getAdmin() {
-		return admin;
-	}
-
-	public void setAdmin(Boolean admin) {
-		this.admin = admin;
-	}
+//	public Boolean getAdmin() {
+//		return admin;
+//	}
+//
+//	public void setAdmin(Boolean admin) {
+//		this.admin = admin;
+//	}
 
 	public Integer getId() {
 		return id;

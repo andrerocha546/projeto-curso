@@ -1,12 +1,15 @@
-package com.andrerocha.clinic.domain;
+package com.andrerocha.projeto.entities;
 
+import javax.persistence.Entity;
+
+@Entity
 public class User extends Person {
+	private static final long serialVersionUID = 1L;
 	
 	private Boolean admin = false;
 
-	public User(Integer id, String name, String email, String password, Boolean admin) {
+	public User(Integer id, String name, String email, String password) {
 		super(id, name, email, password);
-		this.admin = false;
 	}
 
 	public Boolean getAdmin() {
