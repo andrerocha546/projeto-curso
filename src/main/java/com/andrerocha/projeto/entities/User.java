@@ -8,6 +8,10 @@ public class User extends Person {
 	
 	private Boolean admin = false;
 
+	public User() {
+		super();
+	}
+
 	public User(Integer id, String name, String email, String password) {
 		super(id, name, email, password);
 	}
