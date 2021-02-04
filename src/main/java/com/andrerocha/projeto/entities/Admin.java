@@ -1,17 +1,31 @@
 package com.andrerocha.projeto.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 
+import com.andrerocha.projeto.entities.data.PersonalData;
+
 @Entity
-public class Admin extends Person {
+public class Admin implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	
+	private PersonalData personalData;
+	
 	public Admin() {
-		super();
 	}
 
-	public Admin(Integer id, String name, String email, String password) {
-		super(id, name, email, password);
+	public Admin(PersonalData personalData) {
+		this.personalData = personalData;
 	}
+
+	public PersonalData getPersonalData() {
+		return personalData;
+	}
+
+	public void setPersonalData(PersonalData personalData) {
+		this.personalData = personalData;
+	}
+	
 
 }
