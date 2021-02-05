@@ -10,11 +10,11 @@ public class PersonalData {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	private String name;
-	private String email;
-	private String password;
+	private Name name;
+	private Email email;
+	private Password password;
 
-	public PersonalData(String name, String email, String password) {
+	public PersonalData(Name name, Email email, Password password) {
 		this.name = name;
 		this.email = email;
 		this.password = password;
@@ -24,27 +24,27 @@ public class PersonalData {
 		return id;
 	}
 
-	public String getName() {
+	public Name getName() {
 		return name;
 	}
 
-	public void setName(String name) {
+	public void setName(Name name) {
 		this.name = name;
 	}
 
-	public String getEmail() {
+	public Email getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email) {
+	public void setEmail(Email email) {
 		this.email = email;
 	}
 
-	public String getPassword() {
+	public Password getPassword() {
 		return password;
 	}
 
-	public void setPassword(String password) {
+	public void setPassword(Password password) {
 		this.password = password;
 	}
 
