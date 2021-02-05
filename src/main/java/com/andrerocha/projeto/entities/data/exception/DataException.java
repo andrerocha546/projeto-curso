@@ -1,9 +1,9 @@
 package com.andrerocha.projeto.entities.data.exception;
 
-public class EmailException extends RuntimeException {
+public class DataException extends RuntimeException {
 	private static final long serialVersionUID = 1L;
 
-	public EmailException(String message) {
+	public DataException(String message) {
 		super(message);
 	}
 	
