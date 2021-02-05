@@ -3,17 +3,14 @@ package com.andrerocha.projeto.entities.data;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.andrerocha.projeto.entities.data.exception.EmailException;
+import com.andrerocha.projeto.entities.data.exception.DataException;
 
 public class Email {
 
 	private String email;
 
 	public Email(String email) {
-		if (!isValidEmailAddressRegex(email) || email == null) {
-			throw new EmailException("Email " + email + " não é valido");
-		}
-		this.email = email;
+		this.email = isValidEmail(email);
 	}
 
 	public String getEmail() {
@@ -35,6 +32,13 @@ public class Email {
 	        }
 	    }
 	    return isEmailIdValid;
+	}
+	
+	private String isValidEmail(String email) {
+		if (!isValidEmailAddressRegex(email) || email == null) {
+			throw new DataException("Email " + email + " não é valido");
+		}
+		return email;
 	}
 
 }
