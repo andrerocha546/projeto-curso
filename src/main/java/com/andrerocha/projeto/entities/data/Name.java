@@ -3,7 +3,8 @@ package com.andrerocha.projeto.entities.data;
 import com.andrerocha.projeto.entities.data.exception.DataException;
 
 public class Name {
-	private static final ValidatorName validator = new ValidatorName();
+	
+	private static final Validator validator = new ValidatorName();
 
 	private String name;
 
@@ -18,9 +19,9 @@ public class Name {
 	public void setName(String name) {
 		this.name = isValidName(name);
 	}
-	
+
 	private String isValidName(String name) {
-		if (!validator.isValidName(name) || name == null) {
+		if (!validator.isValid(name) || name == null) {
 			throw new DataException("Nome " + name + "invalido");
 		}
 		return name;

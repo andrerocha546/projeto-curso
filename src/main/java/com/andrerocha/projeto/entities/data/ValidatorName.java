@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 
 import com.andrerocha.projeto.entities.data.exception.DataException;
 
-public class ValidatorName {
+public class ValidatorName implements Validator {
 	
 	private static final String UPPERCASE = "(?:[\\p{Lu}&&[\\p{IsLatin}]])";
 	private static final String LOWERCASE = "(?:[\\p{Ll}&&[\\p{IsLatin}]])";
@@ -42,7 +42,7 @@ public class ValidatorName {
 
 	private static final Pattern REGEX_NAME = Pattern.compile(FULL_NAME);
 	
-	public boolean isValidName(String name) {
+	public boolean isValid(String name) {
 		try {			
 			boolean isValid = REGEX_NAME.matcher(name).matches();
 			return isValid;

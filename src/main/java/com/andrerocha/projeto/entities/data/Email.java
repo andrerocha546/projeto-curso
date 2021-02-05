@@ -3,8 +3,8 @@ package com.andrerocha.projeto.entities.data;
 import com.andrerocha.projeto.entities.data.exception.DataException;
 
 public class Email {
-	private static final ValidatorEmail validator = new ValidatorEmail();
 	
+	private static final Validator validator = new ValidatorEmail();
 
 	private String email;
 
@@ -21,7 +21,7 @@ public class Email {
 	}
 	
 	private String isValidEmail(String email) {
-		if (!validator.isValidEmailAddressRegex(email) || email == null) {
+		if (!validator.isValid(email) || email == null) {
 			throw new DataException("Email " + email + " não é valido");
 		}
 		return email;
