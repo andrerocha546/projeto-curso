@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 public class ValidatorEmail implements Validator {
 	
+	@Override
 	public boolean isValid(String email) {
 	    boolean isEmailIdValid = false;
 	    if (email != null && email.length() > 0) {

@@ -17,7 +17,7 @@ public class Email {
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		this.email =  isValidEmail(email);
 	}
 	
 	private String isValidEmail(String email) {

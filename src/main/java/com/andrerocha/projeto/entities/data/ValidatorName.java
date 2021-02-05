@@ -42,6 +42,7 @@ public class ValidatorName implements Validator {
 
 	private static final Pattern REGEX_NAME = Pattern.compile(FULL_NAME);
 	
+	@Override
 	public boolean isValid(String name) {
 		try {			
 			boolean isValid = REGEX_NAME.matcher(name).matches();
