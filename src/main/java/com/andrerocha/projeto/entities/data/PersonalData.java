@@ -12,7 +12,10 @@ public class PersonalData {
 
 	private Name name;
 	private Email email;
-	private Password password;
+	private Password password;	
+
+	public PersonalData() {
+	}
 
 	public PersonalData(Name name, Email email, Password password) {
 		this.name = name;
