@@ -1,12 +1,18 @@
 package com.andrerocha.projeto.entities.data;
 
+import javax.persistence.Embeddable;
+
 import com.andrerocha.projeto.entities.data.exception.DataException;
 
+@Embeddable
 public class Email {
 	
 	private static final Validator validator = new ValidatorEmail();
 
 	private String email;
+
+	public Email() {
+	}
 
 	public Email(String email) {
 		this.email = isValidEmail(email);

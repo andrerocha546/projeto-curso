@@ -2,6 +2,7 @@ package com.andrerocha.projeto.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +14,7 @@ import com.andrerocha.projeto.entities.data.PersonalData;
 public class Admin implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	@Embedded
 	private PersonalData personalData;
 
 	@Id

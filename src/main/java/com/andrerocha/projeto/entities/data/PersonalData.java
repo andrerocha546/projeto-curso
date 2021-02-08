@@ -1,9 +1,16 @@
 package com.andrerocha.projeto.entities.data;
 
-public class PersonalData {
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 
+@Embeddable
+public class PersonalData {
+	
+	@Embedded
 	private Name name;
+	@Embedded
 	private Email email;
+	@Embedded
 	private Password password;	
 
 	public PersonalData() {
