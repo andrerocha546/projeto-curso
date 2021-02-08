@@ -1,14 +1,6 @@
 package com.andrerocha.projeto.entities.data;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 public class PersonalData {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
 
 	private Name name;
 	private Email email;
@@ -21,10 +13,6 @@ public class PersonalData {
 		this.name = name;
 		this.email = email;
 		this.password = password;
-	}
-
-	public Integer getId() {
-		return id;
 	}
 
 	public Name getName() {
