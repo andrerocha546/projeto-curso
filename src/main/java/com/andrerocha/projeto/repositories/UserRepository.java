@@ -12,10 +12,11 @@ public class UserRepository {
 		this.entityManager = EntityManagerFactory.getEntityManager();
 	}
 	
-	public void register(User user) {
+	public User register(User user) {
 		entityManager.getTransaction().begin();
 		entityManager.persist(user);
 		entityManager.getTransaction().commit();
+		return user;
 	}
 
 }
