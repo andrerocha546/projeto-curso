@@ -1,11 +1,21 @@
 package com.andrerocha.projeto.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import javax.persistence.EntityManager;
 
 import com.andrerocha.projeto.entities.User;
 
-@Repository
-public interface UserRepository extends JpaRepository<User, Integer> {
+public class UserRepository {
+	
+	private EntityManager entityManager	;
+	
+	public UserRepository() {
+		this.entityManager = EntityManagerFactory.getEntityManager();
+	}
+	
+	public void register(User user) {
+		entityManager.getTransaction().begin();
+		entityManager.persist(user);
+		entityManager.getTransaction().commit();
+	}
 
 }
