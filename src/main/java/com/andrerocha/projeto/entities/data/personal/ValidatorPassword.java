@@ -1,5 +1,6 @@
-package com.andrerocha.projeto.entities.data;
+package com.andrerocha.projeto.entities.data.personal;
 
+import com.andrerocha.projeto.entities.data.Validator;
 import com.andrerocha.projeto.entities.data.exception.DataException;
 
 public class ValidatorPassword implements Validator {

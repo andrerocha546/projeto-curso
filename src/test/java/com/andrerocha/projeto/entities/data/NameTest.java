@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 
 import com.andrerocha.projeto.entities.data.exception.DataException;
+import com.andrerocha.projeto.entities.data.personal.Name;
 
 class NameTest {
 	

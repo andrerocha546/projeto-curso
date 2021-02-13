@@ -1,4 +1,4 @@
-package com.andrerocha.projeto.entities.data;
+package com.andrerocha.projeto.entities.data.personal;
 
 import javax.persistence.Embeddable;
 import javax.persistence.Embedded;

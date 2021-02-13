@@ -1,7 +1,8 @@
-package com.andrerocha.projeto.entities.data;
+package com.andrerocha.projeto.entities.data.personal;
 
 import javax.persistence.Embeddable;
 
+import com.andrerocha.projeto.entities.data.Validator;
 import com.andrerocha.projeto.entities.data.exception.DataException;
 
 @Embeddable

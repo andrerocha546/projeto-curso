@@ -1,8 +1,9 @@
-package com.andrerocha.projeto.entities.data;
+package com.andrerocha.projeto.entities.data.personal;
 
 import java.util.StringJoiner;
 import java.util.regex.Pattern;
 
+import com.andrerocha.projeto.entities.data.Validator;
 import com.andrerocha.projeto.entities.data.exception.DataException;
 
 public class ValidatorName implements Validator {

@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.andrerocha.projeto.entities.data.PersonalData;
+import com.andrerocha.projeto.entities.data.personal.PersonalData;
 
 @Entity
 public class User implements Serializable {

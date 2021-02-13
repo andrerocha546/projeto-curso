@@ -2,10 +2,10 @@ package com.andrerocha.projeto.builders;
 
 import com.andrerocha.projeto.entities.Admin;
 import com.andrerocha.projeto.entities.User;
-import com.andrerocha.projeto.entities.data.Email;
-import com.andrerocha.projeto.entities.data.Name;
-import com.andrerocha.projeto.entities.data.Password;
-import com.andrerocha.projeto.entities.data.PersonalData;
+import com.andrerocha.projeto.entities.data.personal.Email;
+import com.andrerocha.projeto.entities.data.personal.Name;
+import com.andrerocha.projeto.entities.data.personal.Password;
+import com.andrerocha.projeto.entities.data.personal.PersonalData;
 
 public class AdminBuilder implements Builder {
 	

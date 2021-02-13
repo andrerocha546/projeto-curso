@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import com.andrerocha.projeto.entities.data.exception.DataException;
+import com.andrerocha.projeto.entities.data.personal.Password;
 
 class PasswordTest {
 	

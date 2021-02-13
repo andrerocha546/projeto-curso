@@ -1,7 +1,9 @@
-package com.andrerocha.projeto.entities.data;
+package com.andrerocha.projeto.entities.data.personal;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import com.andrerocha.projeto.entities.data.Validator;
 
 public class ValidatorEmail implements Validator {
 	
