@@ -7,11 +7,10 @@ import com.andrerocha.projeto.repositories.AdminRepository;
 
 public class AdminService {
 	
-	@Autowired
-	private AdminRepository repository;
+	private AdminRepository repository = new AdminRepository();
 	
 	public Admin insert(Admin admin) {
-		return repository.save(admin);
+		return repository.register(admin);
 	}
 
 }

@@ -11,11 +11,10 @@ import com.andrerocha.projeto.repositories.UserRepository;
 @Service
 public class UserService {
 
-	@Autowired
-	private UserRepository repository;
+	private UserRepository repository = new UserRepository();
 
 	public User insert(User user) {
-		return repository.save(user);
+		return repository.register(user);
 	}
 
 	public List<User> findAll() {
