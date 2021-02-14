@@ -15,6 +15,13 @@ public class Article {
 		this.id = null;
 		this.articleData = articleData;
 	}
-	
+
+	public ArticleData getArticleData() {
+		return articleData;
+	}
+
+	public void setArticleData(ArticleData articleData) {
+		this.articleData = articleData;
+	}
 	
 }
