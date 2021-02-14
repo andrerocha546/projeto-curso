@@ -6,12 +6,12 @@ import com.andrerocha.projeto.entities.data.personal.Name;
 import com.andrerocha.projeto.entities.data.personal.Password;
 import com.andrerocha.projeto.entities.data.personal.PersonalData;
 
-public class UserBuilder implements Builder {
+public class UserBuilder implements PersonBuilder {
 	
 	private PersonalData personalData = new PersonalData();
 	
 	@Override
-	public Builder reset() {
+	public PersonBuilder reset() {
 		this.personalData = new PersonalData();
 		return this;
 	}
