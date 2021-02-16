@@ -7,13 +7,16 @@ import com.andrerocha.projeto.entities.data.exception.DataException;
 
 @Embeddable
 public class ImageUrl {
-	
+
 	private static final Validator VALIDATOR = new ValidatorImageUrl();
-	
+
 	private String url;
 
 	public ImageUrl(String url) {
 		this.url = isValid(url);
+	}
+
+	public ImageUrl() {
 	}
 
 	public String getUrl() {
@@ -23,7 +26,7 @@ public class ImageUrl {
 	public void setUrl(String url) {
 		this.url = isValid(url);
 	}
-	
+
 	private String isValid(String url) {
 		if (!VALIDATOR.isValid(url)) {
 			throw new DataException("URL inválida.");
