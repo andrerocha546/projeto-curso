@@ -1,8 +1,11 @@
 package com.andrerocha.projeto.entities.data.article;
 
+import javax.persistence.Embeddable;
+
 import com.andrerocha.projeto.entities.data.Validator;
 import com.andrerocha.projeto.entities.data.exception.DataException;
 
+@Embeddable
 public class Title {
 	
 	private static final Validator validator = new ValidatorTitle();

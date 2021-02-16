@@ -1,11 +1,14 @@
 package com.andrerocha.projeto.entities;
 
+import javax.persistence.Embedded;
+
 import com.andrerocha.projeto.entities.data.article.ArticleData;
 
 public class Article {
 	
 	private Integer id;
 	
+	@Embedded
 	private ArticleData articleData;
 
 	public Article() {

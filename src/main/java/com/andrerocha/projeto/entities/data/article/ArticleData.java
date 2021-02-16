@@ -1,9 +1,16 @@
 package com.andrerocha.projeto.entities.data.article;
 
+import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
+
+@Embeddable
 public class ArticleData {
 	
+	@Embedded
 	private Title title;
+	@Embedded
 	private Description description;
+	@Embedded
 	private ImageUrl imageUrl;
 	
 	public ArticleData(Title title, Description description, ImageUrl imageUrl) {
