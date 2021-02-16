@@ -5,18 +5,21 @@ import javax.persistence.Embedded;
 
 @Embeddable
 public class ArticleData {
-	
+
 	@Embedded
 	private Title title;
 	@Embedded
 	private Description description;
 	@Embedded
 	private ImageUrl imageUrl;
-	
+
 	public ArticleData(Title title, Description description, ImageUrl imageUrl) {
 		this.title = title;
 		this.description = description;
 		this.imageUrl = imageUrl;
+	}
+
+	public ArticleData() {
 	}
 
 	public Title getTitle() {
@@ -42,5 +45,5 @@ public class ArticleData {
 	public void setImageUrl(ImageUrl imageUrl) {
 		this.imageUrl = imageUrl;
 	}
-	
+
 }
