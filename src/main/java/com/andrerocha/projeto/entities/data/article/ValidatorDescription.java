@@ -7,8 +7,8 @@ public class ValidatorDescription implements Validator {
 	@Override
 	public boolean isValid(String string) {
 		boolean isValid = true;
-		final int MAX_LENGTH = 1000;
-		final int MIN_LENGTH = 100;
+		final int MAX_LENGTH = 50;
+		final int MIN_LENGTH = 10;
 		if (string == null || string.length() < MIN_LENGTH || string.length() > MAX_LENGTH) {
 			isValid = false;
 		}
