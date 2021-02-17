@@ -31,7 +31,7 @@ public class Description {
 
 	private String isValidDescription(String description) {
 		if (!VALIDATOR.isValid(description)) {
-			throw new DataException("Descrição deve ter entre 100 e 1000 caracteres.");
+			throw new DataException("Descrição deve ter entre 10 e 100 caracteres.");
 		}
 		return description;
 	}
