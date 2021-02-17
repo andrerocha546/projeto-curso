@@ -2,12 +2,13 @@ package com.andrerocha.projeto.builders;
 
 import com.andrerocha.projeto.entities.Article;
 import com.andrerocha.projeto.entities.data.article.ArticleData;
+import com.andrerocha.projeto.entities.data.article.Content;
 import com.andrerocha.projeto.entities.data.article.Description;
 import com.andrerocha.projeto.entities.data.article.ImageUrl;
 import com.andrerocha.projeto.entities.data.article.Title;
 
 public class ArticleBuilder implements IArticleBuilder {
-	
+
 	private ArticleData articleData = new ArticleData();
 
 	@Override
@@ -36,11 +37,18 @@ public class ArticleBuilder implements IArticleBuilder {
 		articleData.setDescription(descriptionArt);
 		return this;
 	}
-	
+
+	@Override
+	public ArticleBuilder setContent(String content) {
+		Content contentArt = new Content(content);
+		articleData.setContent(contentArt);
+		return this;
+	}
+
 	public Article getResult() {
 		Article article = new Article();
 		article.setArticleData(articleData);
 		return article;
 	}
-
+	
 }

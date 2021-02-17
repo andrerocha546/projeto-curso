@@ -6,5 +6,6 @@ public interface IArticleBuilder {
 	IArticleBuilder setTitle(String title);
 	IArticleBuilder setImageUrl(String imageUrl);
 	IArticleBuilder setDescription(String description);
+	IArticleBuilder setContent(String content);
 	
 }

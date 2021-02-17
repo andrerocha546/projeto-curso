@@ -12,11 +12,14 @@ public class ArticleData {
 	private Description description;
 	@Embedded
 	private ImageUrl imageUrl;
+	@Embedded
+	private Content content;
 
-	public ArticleData(Title title, Description description, ImageUrl imageUrl) {
+	public ArticleData(Title title, Description description, ImageUrl imageUrl, Content content) {
 		this.title = title;
 		this.description = description;
 		this.imageUrl = imageUrl;
+		this.content = content;
 	}
 
 	public ArticleData() {
@@ -44,6 +47,14 @@ public class ArticleData {
 
 	public void setImageUrl(ImageUrl imageUrl) {
 		this.imageUrl = imageUrl;
+	}
+
+	public Content getContent() {
+		return content;
+	}
+
+	public void setContent(Content content) {
+		this.content = content;
 	}
 
 }
