@@ -1,14 +1,17 @@
 package com.andrerocha.projeto.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.andrerocha.projeto.entities.Article;
 import com.andrerocha.projeto.repositories.ArticleRepository;
 
 public class ArticleService {
 	
-	private ArticleRepository repository = new ArticleRepository();
+	@Autowired
+	private ArticleRepository repository;
 	
 	public Article insert(Article article) {
-		return repository.register(article);
+		return repository.save(article);
 	}
 
 }
