@@ -5,10 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import com.andrerocha.projeto.entities.data.article.ArticleData;
 
 @Entity
+@Table(name = "tb_article")
 public class Article {
 	
 	@Id

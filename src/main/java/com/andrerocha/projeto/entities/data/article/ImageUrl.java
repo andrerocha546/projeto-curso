@@ -1,5 +1,6 @@
 package com.andrerocha.projeto.entities.data.article;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 import com.andrerocha.projeto.entities.data.Validator;
@@ -10,6 +11,7 @@ public class ImageUrl {
 
 	private static final Validator VALIDATOR = new ValidatorImageUrl();
 
+	@Column(name = "image_url")
 	private String url;
 
 	public ImageUrl(String url) {
