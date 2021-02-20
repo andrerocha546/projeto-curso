@@ -1,13 +1,15 @@
 package com.andrerocha.projeto.builders;
 
 import com.andrerocha.projeto.entities.Article;
+import com.andrerocha.projeto.entities.Person;
+import com.andrerocha.projeto.entities.User;
 import com.andrerocha.projeto.entities.data.article.ArticleData;
 import com.andrerocha.projeto.entities.data.article.Content;
 import com.andrerocha.projeto.entities.data.article.Description;
 import com.andrerocha.projeto.entities.data.article.ImageUrl;
 import com.andrerocha.projeto.entities.data.article.Title;
 
-public class ArticleBuilder implements IArticleBuilder {
+public class ArticleBuilder implements ArticlesBuilder {
 
 	private ArticleData articleData = new ArticleData();
 
@@ -45,10 +47,16 @@ public class ArticleBuilder implements IArticleBuilder {
 		return this;
 	}
 
+	@Override
+	public ArticleBuilder setPerson(Person person) {
+		articleData.setPerson(person);
+		return this;
+	}
+
 	public Article getResult() {
 		Article article = new Article();
 		article.setArticleData(articleData);
 		return article;
 	}
-	
+
 }

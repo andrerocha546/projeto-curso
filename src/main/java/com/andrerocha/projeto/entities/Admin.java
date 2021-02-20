@@ -1,47 +1,23 @@
 package com.andrerocha.projeto.entities;
 
-import java.io.Serializable;
-
-import javax.persistence.Embedded;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
-import com.andrerocha.projeto.entities.data.personal.PersonalData;
+import com.andrerocha.projeto.entities.data.personal.Email;
+import com.andrerocha.projeto.entities.data.personal.Name;
+import com.andrerocha.projeto.entities.data.personal.Password;
 
 @Entity
-@Table(name = "tb_admin")
-public class Admin implements Serializable {
+@DiscriminatorValue("1")
+public class Admin extends Person {
 	private static final long serialVersionUID = 1L;
-	
-	@Embedded
-	private PersonalData personalData;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	
 	public Admin() {
+		super();
 	}
 
-	public Admin(PersonalData personalData) {
-		this.id = null;
-		this.personalData = personalData;
+	public Admin(Name name, Email email, Password password) {
+		super(name, email, password);
 	}
-	
-	public Integer getId() {
-		return id;
-	}
-
-	public PersonalData getPersonalData() {
-		return personalData;
-	}
-
-	public void setPersonalData(PersonalData personalData) {
-		this.personalData = personalData;
-	}
-	
 
 }
