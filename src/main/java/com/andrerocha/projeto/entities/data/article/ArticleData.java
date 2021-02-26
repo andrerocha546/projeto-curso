@@ -6,7 +6,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.andrerocha.projeto.entities.Person;
-import com.andrerocha.projeto.entities.User;
 
 @Embeddable
 public class ArticleData {
@@ -21,7 +20,7 @@ public class ArticleData {
 	private Content content;
 	@Embedded
 	@ManyToOne
-	@JoinColumn(name = "person_id")
+	@JoinColumn(name = "person_id", referencedColumnName = "id")
 	private Person person;
 
 	public ArticleData(Title title, Description description, ImageUrl imageUrl, Content content, Person person) {

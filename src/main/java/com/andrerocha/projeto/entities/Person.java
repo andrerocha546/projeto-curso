@@ -1,10 +1,12 @@
 package com.andrerocha.projeto.entities;
 
 import java.io.Serializable;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
+import javax.persistence.Embeddable;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,6 +22,7 @@ import com.andrerocha.projeto.entities.data.personal.Name;
 import com.andrerocha.projeto.entities.data.personal.Password;
 
 @Entity
+@Embeddable
 @Table(name = "tb_person")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "is_admin", discriminatorType = DiscriminatorType.INTEGER)
@@ -37,9 +40,8 @@ public abstract class Person implements Serializable {
 	@Embedded
 	private Password password;
 	
-	@Embedded
-	@OneToMany(mappedBy = "user")
-	private Set<Article> articles;
+	@OneToMany(mappedBy = "articleData.person")
+	private List<Article> articles = new ArrayList<>();
 
 	public Person() {
 	}
@@ -75,7 +77,7 @@ public abstract class Person implements Serializable {
 		this.password = password;
 	}
 	
-	public Set<Article> getArticles() {
+	public List<Article> getArticles() {
 		return articles;
 	}
 
