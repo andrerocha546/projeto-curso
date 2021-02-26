@@ -9,12 +9,15 @@ import org.springframework.context.annotation.Profile;
 
 import com.andrerocha.projeto.builders.AdminBuilder;
 import com.andrerocha.projeto.builders.ArticleBuilder;
+import com.andrerocha.projeto.builders.CategoryBuilder;
 import com.andrerocha.projeto.builders.UserBuilder;
 import com.andrerocha.projeto.entities.Admin;
 import com.andrerocha.projeto.entities.Article;
+import com.andrerocha.projeto.entities.Category;
 import com.andrerocha.projeto.entities.User;
 import com.andrerocha.projeto.repositories.AdminRepository;
 import com.andrerocha.projeto.repositories.ArticleRepository;
+import com.andrerocha.projeto.repositories.CategoryRepository;
 import com.andrerocha.projeto.repositories.UserRepository;
 
 @Configuration
@@ -27,6 +30,8 @@ public class TestConfig implements CommandLineRunner {
 	private AdminRepository adminRepository;
 	@Autowired
 	private ArticleRepository articleRepository;
+	@Autowired
+	private CategoryRepository categoryRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -77,6 +82,17 @@ public class TestConfig implements CommandLineRunner {
 				.setContent("Lorem Ipsum is simply ".repeat(20))
 				.setPerson(admin)
 				.getResult();
+		
+		Category category = new CategoryBuilder()
+				.setName("sei la")
+				.getResult();
+		
+		Category category2 = new CategoryBuilder()
+				.setName("sei la")
+				.setParentId(category)
+				.getResult();
+		
+		categoryRepository.saveAll(Arrays.asList(category, category2));
 
 		articleRepository.saveAll(Arrays.asList(article, article2, article3));
 
