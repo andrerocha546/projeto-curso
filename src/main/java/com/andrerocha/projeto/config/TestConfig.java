@@ -70,8 +70,15 @@ public class TestConfig implements CommandLineRunner {
 				.setContent("Lorem Ipsum is simply ".repeat(20))
 				.setPerson(admin)
 				.getResult();
+		Article article3 = new ArticleBuilder()
+				.setTitle("nao sei aaaa")
+				.setImageUrl("https://google.com")
+				.setDescription("Lorem Ipsum is ".repeat(3))
+				.setContent("Lorem Ipsum is simply ".repeat(20))
+				.setPerson(admin)
+				.getResult();
 
-		articleRepository.saveAll(Arrays.asList(article, article2));
+		articleRepository.saveAll(Arrays.asList(article, article2, article3));
 
 	}
 
