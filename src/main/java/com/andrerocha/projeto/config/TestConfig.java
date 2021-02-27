@@ -18,6 +18,7 @@ import com.andrerocha.projeto.entities.User;
 import com.andrerocha.projeto.repositories.AdminRepository;
 import com.andrerocha.projeto.repositories.ArticleRepository;
 import com.andrerocha.projeto.repositories.CategoryRepository;
+import com.andrerocha.projeto.repositories.PersonRepository;
 import com.andrerocha.projeto.repositories.UserRepository;
 
 @Configuration
@@ -25,9 +26,7 @@ import com.andrerocha.projeto.repositories.UserRepository;
 public class TestConfig implements CommandLineRunner {
 
 	@Autowired
-	private UserRepository userRepository;
-	@Autowired
-	private AdminRepository adminRepository;
+	private PersonRepository personRepository;
 	@Autowired
 	private ArticleRepository articleRepository;
 	@Autowired
@@ -58,8 +57,7 @@ public class TestConfig implements CommandLineRunner {
 				.setPassword("Asdsr11941918")
 				.getResult();
 
-		userRepository.saveAll(Arrays.asList(user, user2));
-		adminRepository.saveAll(Arrays.asList(admin, admin2));
+		personRepository.saveAll(Arrays.asList(admin, admin2, user, user2));
 
 		Article article = new ArticleBuilder()
 				.setTitle("nao sei aaaa")
@@ -93,7 +91,6 @@ public class TestConfig implements CommandLineRunner {
 				.getResult();
 		
 		categoryRepository.saveAll(Arrays.asList(category, category2));
-
 		articleRepository.saveAll(Arrays.asList(article, article2, article3));
 
 	}
