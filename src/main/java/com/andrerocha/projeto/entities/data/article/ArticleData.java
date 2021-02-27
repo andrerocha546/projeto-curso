@@ -5,7 +5,9 @@ import javax.persistence.Embedded;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.andrerocha.projeto.entities.Category;
 import com.andrerocha.projeto.entities.Person;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Embeddable
 public class ArticleData {
@@ -20,8 +22,14 @@ public class ArticleData {
 	private Content content;
 	@Embedded
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name = "person_id", referencedColumnName = "id")
 	private Person person;
+	@Embedded
+	@ManyToOne
+	@JoinColumn(name = "category_id", referencedColumnName = "id")
+	private Category category;
+	
 
 	public ArticleData(Title title, Description description, ImageUrl imageUrl, Content content, Person person) {
 		this.title = title;
@@ -72,6 +80,14 @@ public class ArticleData {
 
 	public void setPerson(Person person) {
 		this.person = person;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 
 }
