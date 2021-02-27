@@ -12,7 +12,7 @@ public class ArticleDTO implements Serializable {
 	private String description;
 	private String imageUrl;
 	private String content;
-	private PersonDTO autor;
+	private PersonDTO author;
 
 	public ArticleDTO(Article article) {
 		this.id = article.getId();
@@ -20,7 +20,7 @@ public class ArticleDTO implements Serializable {
 		this.description = article.getArticleData().getDescription().getDescription();
 		this.imageUrl = article.getArticleData().getImageUrl().getUrl();
 		this.content = article.getArticleData().getContent().getContent();
-		this.autor = new PersonDTO(article.getArticleData().getPerson());
+		this.author = new PersonDTO(article.getArticleData().getPerson());
 	}
 
 	public Integer getId() {
@@ -43,8 +43,8 @@ public class ArticleDTO implements Serializable {
 		return content;
 	}
 
-	public PersonDTO getAutor() {
-		return autor;
+	public PersonDTO getAuthor() {
+		return author;
 	}
 	
 }
