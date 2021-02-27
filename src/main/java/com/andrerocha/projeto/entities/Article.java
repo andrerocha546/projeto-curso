@@ -35,5 +35,9 @@ public class Article {
 	public void setArticleData(ArticleData articleData) {
 		this.articleData = articleData;
 	}
+
+	public Integer getId() {
+		return id;
+	}
 	
 }

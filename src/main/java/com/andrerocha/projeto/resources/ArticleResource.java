@@ -1,6 +1,7 @@
 package com.andrerocha.projeto.resources;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.andrerocha.projeto.dto.ArticleDTO;
 import com.andrerocha.projeto.entities.Article;
 import com.andrerocha.projeto.services.ArticleService;
 
@@ -19,9 +21,11 @@ public class ArticleResource {
 	private ArticleService service;
 	
 	@GetMapping
-	public ResponseEntity<List<Article>> findAll() {
+	public ResponseEntity<List<ArticleDTO>> findAll() {
 		List<Article> list = service.findAll();
-		return ResponseEntity.ok().body(list);
+		List<ArticleDTO> listDto = list.stream()
+				.map(article -> new ArticleDTO(article)).collect(Collectors.toList());
+		return ResponseEntity.ok().body(listDto);
 	}
 
 }
