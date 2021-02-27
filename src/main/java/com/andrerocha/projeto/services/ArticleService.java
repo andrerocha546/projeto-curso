@@ -28,5 +28,10 @@ public class ArticleService {
 		Optional<Article> article = repository.findById(id);
 		return article.orElseThrow(() -> new ObjectNotFoundException("Artigo não encontrado"));
 	}
+	
+	public void delete(Integer id) {
+		findById(id);
+		repository.deleteById(id);
+	}
 
 }
