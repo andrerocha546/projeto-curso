@@ -20,6 +20,7 @@ import javax.persistence.Table;
 import com.andrerocha.projeto.entities.data.personal.Email;
 import com.andrerocha.projeto.entities.data.personal.Name;
 import com.andrerocha.projeto.entities.data.personal.Password;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Embeddable
@@ -79,6 +80,10 @@ public abstract class Person implements Serializable {
 	
 	public List<Article> getArticles() {
 		return articles;
+	}
+
+	public Integer getId() {
+		return id;
 	}
 
 }

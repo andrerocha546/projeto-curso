@@ -1,11 +1,15 @@
 package com.andrerocha.projeto.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -23,6 +27,8 @@ public class Category {
 	@OneToOne
 	@JoinColumn(name = "parent_id", referencedColumnName = "id")
 	private Category parentId;
+	@OneToMany(mappedBy = "articleData.category")
+	private List<Article> articles = new ArrayList<Article>();
 
 	public Category(CategoryName name, Category parentId) {
 		this.id = null;
@@ -51,6 +57,10 @@ public class Category {
 
 	public Integer getId() {
 		return id;
+	}
+
+	public List<Article> getArticles() {
+		return articles;
 	}
 
 }
